@@ -8,6 +8,5 @@
 - Run dummy_predictor.py
   
  
-<br>
 Result of dummy prediction:
 ![av-bitcoin-trade-gui](docs/predictor.png)
