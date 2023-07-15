@@ -8,5 +8,8 @@
 - Run dummy_predictor.py
   
  
-Result of dummy prediction:
+Result of dummy prediction:<br>
 ![av-bitcoin-trade-gui](docs/predictor.png)
+
+Components and data flow:<br>
+![Chart panel](docs/av-bitcoin-trade.png)
