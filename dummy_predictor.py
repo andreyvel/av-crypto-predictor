@@ -1,3 +1,4 @@
+import logging
 from datetime import datetime, timedelta
 import json
 import time
@@ -19,6 +20,7 @@ class DummyPredictor:
         self.context = zmq.Context()
 
     def start(self):
+        logging.warning(f"Read REST API quotes: {self.cfg.rest_api_service}")
         rest_api = RestApiService(self.cfg.rest_api_service)
         self.quotes = rest_api.load_quotes(self.cfg.trade_symbol)
 
@@ -28,8 +30,9 @@ class DummyPredictor:
         self.predictor_worker()
 
     def trade_stream_worker(self):
+        logging.warning(f"Starting ZMQ events subscriber: {self.cfg.trade_stream_sub}")
         socket = self.context.socket(zmq.SUB)
-        socket.connect(self.cfg.trade_stream_pub)
+        socket.connect(self.cfg.trade_stream_sub)
         socket.setsockopt(zmq.SUBSCRIBE, bytes("", "utf-8"))
 
         while True:
@@ -44,9 +47,9 @@ class DummyPredictor:
                 self.quote_tick[symbol] = price  # update last price
 
     def predictor_worker(self):
+        logging.warning(f"Starting ZMQ advice publisher: {self.cfg.trade_advice_pub}")
         socket = self.context.socket(zmq.PUB)
-        #socket.bind(self.cfg.trade_advice_pub)
-        socket.bind("tcp://*:%s" % 4505)
+        socket.bind(self.cfg.trade_advice_pub)
 
         while True:
             # At this point should be real ML algorithm
