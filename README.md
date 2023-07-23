@@ -1,15 +1,15 @@
-# av-bitcoin-predictor
+# av-crypto-predictor
 
 ### How to start
 - Configure app_config.py (trade_advice_pub = "tcp://localhost:4505"<br>
-  should be the same for av-bitcoin-predictor and av-bitcoin-trade-gui)
-- Run av-bitcoin-emulator.sh (Random quote emulator)
-- Run av-bitcoin-trade-gui.sh (Linux GUI client for trading)
+  should be the same for av-crypto-predictor and av-crypto-trade-gui)
+- Run av-crypto-emulator.sh (Random quote emulator)
+- Run av-crypto-trade-gui.sh (Linux GUI client for trading)
 - Run dummy_predictor.py
   
  
 Result of dummy prediction:<br>
-![av-bitcoin-trade-gui](docs/predictor.png)
+![av-crypto-trade-gui](docs/predictor.png)
 
 Components and data flow:<br>
-![Chart panel](docs/av-bitcoin-trade.png)
+![Chart panel](docs/av-crypto-trade.png)
