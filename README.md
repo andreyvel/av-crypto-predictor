@@ -3,8 +3,8 @@
 ### How to start
 - Configure app_config.py (trade_advice_pub = "tcp://localhost:4505"<br>
   should be the same for av-crypto-predictor and av-crypto-trade-gui)
-- Run av-crypto-emulator.sh (Random quote emulator)
-- Run av-crypto-trade-gui.sh (Linux GUI client for trading)
+- Run av-crypto-emulator.sh (Random quote emulator https://github.com/andreyvel/av-crypto-trade)
+- Run av-crypto-trade-gui.sh (Linux GUI client for trading https://github.com/andreyvel/av-crypto-trade)
 - Run dummy_predictor.py
   
  
